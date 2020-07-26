@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,6 +15,8 @@ public class ResultActivity extends AppCompatActivity {
 
     private TextView tv_result;
     private ImageView iv_profile;
+
+    private Button goToMainButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -29,6 +33,15 @@ public class ResultActivity extends AppCompatActivity {
         iv_profile  = findViewById (R.id.iv_profile);
         Glide.with(this).load(photoUrl).into(iv_profile);
 
+        goToMainButton = (Button) findViewById(R.id.btn_gotomain);
+
+        goToMainButton.setOnClickListener(new View.OnClickListener() { //If clicked plus
+            @Override
+            public void onClick(View v) { //Create a new intent which will send the record to the main
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent); //start activity
+            }
+        });
     }
 
 }

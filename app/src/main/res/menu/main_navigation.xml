@@ -3,15 +3,18 @@
 
     <item
         android:id="@+id/navigation_community"
-        android:title="커뮤니티" />
+        android:icon="@drawable/nav_community"
+        android:title="Community"/>
 
     <item
         android:id="@+id/navigation_TD"
-        android:title="토닥" />
+        android:icon="@drawable/nav_home"
+        android:title="Home" />
 
     <item
         android:id="@+id/navigation_IoT"
-        android:title="무드등" />
+        android:icon="@drawable/nav_iot"
+        android:title="Light/Speaker" />
 
 
 </menu>

@@ -38,7 +38,7 @@ public class ResultActivity extends AppCompatActivity {
         goToMainButton.setOnClickListener(new View.OnClickListener() { //If clicked plus
             @Override
             public void onClick(View v) { //Create a new intent which will send the record to the main
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity_original.class);
                 startActivity(intent); //start activity
             }
         });

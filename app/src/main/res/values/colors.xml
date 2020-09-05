@@ -3,4 +3,12 @@
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorAccent">#FFFFFF</color>
+    <color name="colorBackground">#D3D8DB</color>
+    <color name="colorBackgroundIoT">#D5E0E5</color>
+    <color name="colorText">#8D8C91</color>
+    <color name="colorButton">#918E8C</color>
+    <color name="colorArrow">#CBC7C7</color>
+    <color name="colorTextSecond">#A79F9A</color>
+    <color name="colorTextThird">#9A9DA7</color>
+    <color name="colorTextFourth">#8E92A0</color>
 </resources>

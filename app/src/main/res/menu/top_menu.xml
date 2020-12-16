@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/category_menu"
+        android:title="카테고리"
+        app:showAsAction="always" />
+    <item android:id="@+id/report_menu"
+        android:title="레포트"
+        app:showAsAction="always" />
+
+</menu>

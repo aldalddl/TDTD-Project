@@ -6,18 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<!--    <ScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="vertical"-->
-<!--        android:gravity ="center"-->
-<!--        android:fillViewport="true"-->
-<!--        android:layout_marginTop="0dp"-->
-<!--        android:id="@+id/scrollView">-->
-
-<!--<LinearLayout-->
-<!--    android:layout_width="wrap_content"-->
-<!--    android:layout_height="wrap_content">-->
 
     <ImageView
         android:id="@+id/imageView5"
@@ -29,15 +17,25 @@
         app:srcCompat="@drawable/img_background1"
         tools:ignore="MissingConstraints" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_face_index"
+        app:lottie_fileName="8881-wave.json" />
+
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="300dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_face_index"
+        app:layout_constraintTop_toTopOf="@+id/imageView5"
         app:srcCompat="@drawable/img_background2"
         tools:ignore="MissingConstraints" />
 
@@ -53,10 +51,10 @@
 
     <Button
         android:id="@+id/btn_gototd"
-        android:layout_width="135dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/btn_calltd"
+        android:layout_width="139dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_gototest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,10 +62,10 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="불안지수가 높아지고 있어요"
+        android:layout_width="234dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/tx_picture"
         android:textColor="@color/colorText"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,93 +78,52 @@
         android:id="@+id/tv_face"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="40dp"
         android:text="감정"
         android:textColor="@color/colorTextSecond"
         android:textSize="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/tv_anxiety"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toEndOf="@+id/tv_pulse"
-        app:layout_constraintTop_toBottomOf="@+id/btn_gototd" />
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_counseling" />
 
     <TextView
         android:id="@+id/tv_anxiety"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginRight="68dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="120dp"
         android:text="불안지수"
         android:textColor="@color/colorTextSecond"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_gototd"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/tv_pulse_index"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="8dp"
-        android:text="100"
-        android:textColor="@color/colorTextSecond"
-        android:textSize="17dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pulse"
+        app:layout_constraintTop_toBottomOf="@+id/tv_counseling"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tv_anxiety_index"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="130dp"
         android:text="165"
         android:textColor="@color/colorTextSecond"
         android:textSize="17dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/tv_anxiety"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/tv_pulse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="16dp"
-        android:text="맥박수"
-        android:textColor="@color/colorTextSecond"
-        android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_gototd"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tv_face_index"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="25dp"
         android:text="Sad"
         android:textColor="@color/colorTextSecond"
         android:textSize="17dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/tv_anxiety_index"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toEndOf="@+id/tv_pulse_index"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/tv_face" />
 
     <ImageView
@@ -181,105 +138,14 @@
 
     <TextView
         android:id="@+id/tv_counseling"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="64dp"
-        android:text="Counseling"
+        android:layout_width="244dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/tx_main2"
         android:textColor="@color/colorTextThird"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
-
-    <TextView
-        android:id="@+id/tv_counseling_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="토닥이가 불안을 잠재워 줄게요."
-        android:textColor="@color/colorTextFourth"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_counseling" />
-
-    <TextView
-        android:id="@+id/tv_people"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="70dp"
-        android:text="People"
-        android:textColor="@color/colorTextThird"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_counseling_content" />
-
-    <TextView
-        android:id="@+id/tv_calltd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="토닥이 부르기"
-        android:textColor="@color/colorArrow"
-        app:layout_constraintEnd_toStartOf="@+id/btn_arrow_td"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
-
-    <Button
-        android:id="@+id/btn_arrow_td"
-        android:layout_width="44dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/img_arrow_brown"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView4" />
-
-    <TextView
-        android:id="@+id/tv_gocommunity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="공감하러가기"
-        android:textColor="@color/colorArrow"
-
-        app:layout_constraintEnd_toStartOf="@+id/btn_arrow_people"
-        app:layout_constraintTop_toBottomOf="@+id/tv_counseling_content" />
-
-    <Button
-        android:id="@+id/btn_arrow_people"
-        android:layout_width="43dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/img_arrow_brown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_counseling_content" />
-
-    <ImageView
-        android:id="@+id/iv_comm1"
-        android:layout_width="251dp"
-        android:layout_height="121dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_people"
-        app:srcCompat="@drawable/iv_comm1" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="289dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="210dp"
-        android:layout_marginLeft="210dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_people"
-        app:srcCompat="@drawable/iv_comm2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

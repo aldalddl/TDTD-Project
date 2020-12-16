@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".report.writingSolution">
+
+
+    <EditText
+        android:id="@+id/solution_writing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="50dp"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="여기에 적어두세요."
+        android:inputType="textMultiLine"
+        android:paddingLeft="20dp"
+        android:paddingTop="56dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="60dp"
+        android:textColor="#747474"
+        android:textColorHint="#848484"
+        android:textSize="20dp"
+        android:windowSoftInputMode="stateHidden|adjustResize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <Button-->
+    <!--        android:id="@+id/solution_button"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        tools:layout_editor_absoluteX="161dp"-->
+    <!--        tools:layout_editor_absoluteY="500dp" />-->
+
+    <FrameLayout
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@null"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/onClickToCancle"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/btn_cancle"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"/>
+
+        <ImageButton
+            android:id="@+id/solution_button"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:padding="16dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/solution_button" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

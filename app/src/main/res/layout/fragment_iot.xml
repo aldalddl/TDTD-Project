@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
 
+
     <Button
         android:id="@+id/button"
         android:layout_width="51dp"
@@ -18,24 +19,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_moodlight"
-        android:layout_width="203dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:text="무드등"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/btn_moodlight"-->
+<!--        android:layout_width="203dp"-->
+<!--        android:layout_height="59dp"-->
+<!--        android:layout_marginStart="4dp"-->
+<!--        android:layout_marginLeft="4dp"-->
+<!--        android:text="무드등"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
-    <Button
-        android:id="@+id/btn_speaker"
-        android:layout_width="196dp"
-        android:layout_height="59dp"
-        android:text="스피커"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_moodlight" />
+<!--    <Button-->
+<!--        android:id="@+id/btn_speaker"-->
+<!--        android:layout_width="196dp"-->
+<!--        android:layout_height="59dp"-->
+<!--        android:text="스피커"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/btn_moodlight" />-->
 
     <TextView
         android:id="@+id/tv_light_td"
@@ -68,7 +69,7 @@
         android:id="@+id/imageView6"
         android:layout_width="525dp"
         android:layout_height="548dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_light_off"
@@ -89,9 +90,8 @@
         android:id="@+id/btn_light_powerbtn_off"
         android:layout_width="61dp"
         android:layout_height="57dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:background="@drawable/img_iot_light_powerbtn_off"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_light_off" />
@@ -101,8 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
         android:text="밝기"
         android:textColor="@color/colorText"
         android:textSize="15dp"
@@ -115,175 +114,110 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="80dp"
         android:text="색상"
         android:textColor="@color/colorText"
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_bulb" />
-
-    <ImageView
-        android:id="@+id/iv_bulb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bright"
-        app:srcCompat="@drawable/img_bulb" />
-
-    <ImageView
-        android:id="@+id/iv_bulb_yellow"
-        android:layout_width="19dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bright"
-        app:srcCompat="@drawable/img_bulb_yellow" />
-
-    <ImageView
-        android:id="@+id/iv_bulb2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_color"
-        app:srcCompat="@drawable/img_bulb" />
-
-    <TextView
-        android:id="@+id/tv_temperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:text="온도"
-        android:textColor="@color/colorText"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_bulb2" />
-
-    <ImageView
-        android:id="@+id/iv_bulb_blue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_temperature"
-        app:srcCompat="@drawable/img_bulb_blue" />
-
-    <TextView
-        android:id="@+id/tv_mood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:text="분위기"
-        android:textColor="@color/colorText"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_bulb_blue" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_bright" />
 
     <Button
-        android:id="@+id/btn_warm"
+        android:id="@+id/btnLed1"
         android:layout_width="133dp"
         android:layout_height="42dp"
         android:layout_marginStart="45dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/btn_warm"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_mood" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_color" />
 
     <Button
-        android:id="@+id/btn_sleepy"
-        android:layout_width="135dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
-        android:background="@drawable/btn_sleepy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_mood" />
-
-    <Button
-        android:id="@+id/btn_sentimental"
-        android:layout_width="135dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/btn_sentimental"
+        android:id="@+id/btnLedDark"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/img_bulb"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_warm" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_bright" />
 
     <Button
-        android:id="@+id/btn_speaker_party"
-        android:layout_width="134dp"
-        android:layout_height="38dp"
+        android:id="@+id/btnLedBright"
+        android:layout_width="30dp"
+        android:layout_height="46dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
+        android:layout_marginEnd="85dp"
+        android:background="@drawable/img_bulb_yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bright" />
+
+    <Button
+        android:id="@+id/btnLedMiddleBright"
+        android:layout_width="29dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bulb_middle"
+        app:layout_constraintEnd_toStartOf="@+id/btnLedBright"
+        app:layout_constraintStart_toEndOf="@+id/btnLedDark"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bright" />
+
+    <Button
+        android:id="@+id/btnLed2"
+        android:layout_width="133dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="45dp"
         android:background="@drawable/btn_party"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_sleepy" />
+        app:layout_constraintStart_toEndOf="@+id/btnLed1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_color" />
 
-    <ImageView
-        android:id="@+id/imageView12"
+    <Button
+        android:id="@+id/btnLed3"
+        android:layout_width="133dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/btn_sentimental"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLed1" />
+
+    <Button
+        android:id="@+id/btnLed4"
+        android:layout_width="133dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="45dp"
+        android:background="@drawable/btn_sleepy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnLed3"
+        app:layout_constraintTop_toBottomOf="@+id/btnLed2" />
+
+    <TextView
+        android:id="@+id/tv_recommend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="25dp"
+        android:text="당신의 색"
+        android:textColor="@color/colorText"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLed3" />
+
+    <Button
+        android:id="@+id/btnLedRecommend"
+        android:layout_width="184dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn_colortherapy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_temperature"
-        app:srcCompat="@drawable/img_bulb_pink" />
-
-    <ImageView
-        android:id="@+id/iv_scroll_light"
-        android:layout_width="285dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/iv_bulb_yellow"
-        app:layout_constraintHorizontal_bias="0.588"
-        app:layout_constraintStart_toEndOf="@+id/iv_bulb"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bright"
-        app:srcCompat="@drawable/scroll_light" />
-
-    <ImageView
-        android:id="@+id/iv_scroll_temp"
-        android:layout_width="284dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView12"
-        app:layout_constraintHorizontal_bias="0.678"
-        app:layout_constraintStart_toEndOf="@+id/iv_bulb_blue"
-        app:layout_constraintTop_toBottomOf="@+id/tv_temperature"
-        app:srcCompat="@drawable/scroll_light" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="294dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.574"
-        app:layout_constraintStart_toEndOf="@+id/iv_bulb2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_color"
-        app:srcCompat="@drawable/scroll_color" />
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_recommend" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -45,10 +45,19 @@ https://www.youtube.com/watch?v=prTo8yogprE&t=519s
 - 최신순, 인기순 버튼을 통해서 재정렬 가능
 - 해당 community 항목 클릭 시 자신의 상담 정보 열람 가능
 
+<img src="https://user-images.githubusercontent.com/63048392/114257404-d5a27680-99fa-11eb-88ae-294ec2596498.PNG" width="600" height="200">
+
+
+
 ## Face recognition
 
 ### FaceRecognitionAcitivity.java
 - microsoft의 azure api 사용
 - 자신의 얼굴 사진을 찍고 감정에 대해서 분석
 - 분석 결과를 통해 감정과 퍼센트를 나타냄
+- 감정 분석 결과를 데이터베이스에 아래와 같은 형태로 저장
 
+<img src="https://user-images.githubusercontent.com/63048392/114257373-91af7180-99fa-11eb-91f3-299bd1fcdeea.PNG" width="400" height="150">
+
+
+## IoT

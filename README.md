@@ -61,3 +61,54 @@ https://www.youtube.com/watch?v=prTo8yogprE&t=519s
 
 
 ## IoT
+
+### iotFragment.java
+- 아래 코드에 자신의 uuid와 blue tooth의 MAC주소를 기입합니다
+```c
+  private static final UUID MY_UUID = UUID.fromString(""); // SPP UUID service
+  private static String address = ""; // MAC-address of Bluetooth module (you must edit this line)
+```
+
+- 아두이노 bluetooth 모듈을 켜서 아래 코드에서 연결 상태를 확인합니다
+```c
+ private void checkBTState() {
+        // Check for Bluetooth support and then check to make sure it is turned on
+        // Emulator doesn't support Bluetooth and will return null
+        if(btAdapter==null) {
+            errorExit("Fatal Error", "Bluetooth not support");
+        } else {
+            if (btAdapter.isEnabled()) {
+                Log.d(TAG, "...Bluetooth ON...");
+            } else {
+                //Prompt user to turn on Bluetooth
+                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(enableBtIntent, 1);
+            }
+        }
+    }
+```
+- 아래 코드를 통해서 블루투스와 통신을 하여 색을 바꿔줍니다.
+- 버튼 클릭시 이벤트가 발생해서 대상의 색을 지정해주는 역할을 합니다.
+
+```c
+       h = new Handler() {
+            public void handleMessage(android.os.Message msg) {
+                switch (msg.what) {
+                    case RECIEVE_MESSAGE:
+                        byte[] readBuf = (byte[]) msg.obj;
+                        String strIncom = new String(readBuf, 0, msg.arg1);
+                        sb.append(strIncom);
+                        int endOfLineIndex = sb.indexOf("\r\n");
+                        if (endOfLineIndex > 0) {
+                            String sbprint = sb.substring(0, endOfLineIndex);
+                            sb.delete(0, sb.length());
+                            txtArduino.setText("Data from Arduino: " + sbprint);
+                            if(flag%4==3){
+                                rlayout.setBackgroundColor(Color.rgb(255, 255, 255));
+                            }
+                            else if(flag%4==1){ //R
+                                rlayout.setBackgroundColor(Color.rgb(255, 0, 0));
+                            }
+```
+
+

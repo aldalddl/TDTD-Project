@@ -71,7 +71,130 @@ https://www.youtube.com/watch?v=prTo8yogprE&t=519s
 - face recognition: myuid, percent, sentiment
 - recommend: (destinationuid: true)
 
-### iotFragment.java
+## Migration Guide
+
+### Community Fragment
+- 아래는 기본적인 커뮤니티 코드입니다
+
+```c
+ context = rootview.getContext();
+        recyclerView = rootview.findViewById(R.id.recylerview); //아디 연결
+        recyclerView.setHasFixedSize(true); //리사이클러뷰 기존성능 강화
+        layoutManger = new LinearLayoutManager(context);
+        recyclerView.setLayoutManager(layoutManger);
+        arrayList = new ArrayList<>(); //User 객체를 담을 어레이 리스트 (어댑터 쪽으로)
+        database = FirebaseDatabase.getInstance(); //파이어베이스 데이터베이스 연동
+
+        databaseReference = database.getReference("community"); //파이어 베이스에서 user
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // 파이어베이스 데이터베이스의 데이터를 받아오는 곳
+                arrayList.clear(); //기존 배열리스트가 존재하지 않게 초기화
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) { //반복문으로 데이터 list를 추출해냄
+                    community_user user1 = snapshot.getValue(community_user.class); //만들어뒀던 User 객체에 데이터를 담는
+                    arrayList.add(user1); // 담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
+                }
+                adapter.notifyDataSetChanged(); //리스트 저장 및 새로고침
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+
+```
+
+- 아래는 커뮤니티를 동작하게 하는 adapter의 코드로 필수적으로 작성이 되어야 합니다.
+
+```c
+  adapter = new CustomAdapter(arrayList, context, new CustomAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                final Intent intent = new Intent(view.getContext(), community_detail.class);
+                final String destinationUid = arrayList.get(position).uid;
+                final String date1 = arrayList.get(position).date;
+
+                final Bundle InfoBundle = new Bundle();
+                DestinationUid = destinationUid;
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) { //반복문으로 데이터 list를 추출해냄
+                            String uid = snapshot.child("uid").getValue(String.class); //uid
+                            String date2 = snapshot.child("date").getValue(String.class); //uid
+
+                            if (uid.equals(destinationUid)&& date1.equals(date2)) {
+                                InfoBundle.putString("destinationUid", destinationUid);
+                                InfoBundle.putString("date", date2);
+                                InfoBundle.putString("writing", snapshot.child("writing").getValue(String.class));
+                                intent.putExtras(InfoBundle);
+
+                                startActivity(intent);
+                                break;
+                            } else {
+                                continue;
+                            }
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                    }
+                });
+
+
+            }
+        });
+        recyclerView.setAdapter(adapter); //리사이클러뷰에 어댑터 연결
+```
+
+
+
+### FaceRecognition Fragment
+- 자신의 얼굴 감정을 인식하기 위해서 카메라 접근을 먼저 허용해야 합니다.
+- 아래는 카메라 접근 허용 코드입니다.
+
+```c
+  if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(FaceRecognitionAcitivity.this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+                } else {
+
+                    if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                            == PackageManager.PERMISSION_GRANTED) { // contents }
+                    else { // contents }
+```
+
+- 아래는 Azure로 얼굴 이미지를 보내고 그 이미지에 대해서 감정 분석 결과를 받아오는 코드입니다.
+- Azure API Key가 필수로 입력이 되어야 합니다. 
+
+```c
+  @Override
+            protected void onPostExecute(Face[] faces) {
+                pd.dismiss();
+                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                Gson gson = new Gson();
+                String data = gson.toJson(faces);
+                if (faces == null || faces.length == 0) {
+                    makeToast("No faces detected. You may not have added the API Key or try retaking the picture.");
+                } else {
+                    intent.putExtra("list_faces", data);
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byte[] byteArray = stream.toByteArray();
+
+                    intent.putExtra("image", byteArray);
+                    startActivity(intent);
+                }
+
+            }
+        };
+        detectTask.execute(inputStream);
+    }
+```
+
+
+
+### IotFragment
 - 아래 코드에 자신의 uuid와 blue tooth의 MAC주소를 기입합니다
 ```c
   private static final UUID MY_UUID = UUID.fromString(""); // SPP UUID service

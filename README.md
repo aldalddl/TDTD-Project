@@ -1,6 +1,10 @@
-# 토닥토닥 프로젝트 (android)
+# 토닥토닥 프로젝트 (Android Ver.)
 
 <img src="https://img.shields.io/badge/platform-firebase-blue">  <img src="https://img.shields.io/badge/platform-android-green"> 
+
+## Summary
+
+
 
 ## Requirements
 - Android API level 15+
@@ -41,17 +45,22 @@
 
 ## Demo App
 
+
 <img src="https://user-images.githubusercontent.com/63048392/114255991-121da480-99f2-11eb-84ca-5a4dae51d699.png" width="200" height="350"> <img src="https://user-images.githubusercontent.com/63048392/114255996-13e76800-99f2-11eb-9704-c531e1c0a39e.png" width="200" height="350"> <img src="https://user-images.githubusercontent.com/63048392/114256087-a7209d80-99f2-11eb-9079-54ad1547d308.png" width="200" height="350"> <img src="https://user-images.githubusercontent.com/63048392/114256080-a25be980-99f2-11eb-805f-dfad0be6b6ff.png" width="200" height="350"> 
+
 
 자세한 페이지에 대해서는 아래 링크를 통해 확인 가능
 
 https://www.youtube.com/watch?v=prTo8yogprE&t=519s
 
 
-<img src="https://user-images.githubusercontent.com/63048392/114255908-696f4500-99f1-11eb-84bc-57976e35adea.PNG" width="600" height="200">
+## Firebase Query
 
-<img src="https://user-images.githubusercontent.com/63048392/114257404-d5a27680-99fa-11eb-88ae-294ec2596498.PNG" width="600" height="200">
-
+- anxiety information: about_anxiety, cause1, cause2, result_color, result_explain, uid
+- anxiety information for report: about_anxiety, cause1, cause2, result_color, result_explain, uid
+- community: Cause1, date, recommendCount, uid, writing
+- face recognition: myuid, percent, sentiment
+- recommend: (destinationuid: true)
 
 ### iotFragment.java
 - 아래 코드에 자신의 uuid와 blue tooth의 MAC주소를 기입합니다
